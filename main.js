@@ -1,5 +1,7 @@
 const p = document.querySelector("p");
 const block = document.querySelector(".block")
+const pre = document.querySelector("pre");
+const span = document.querySelector("span");
 
 const handleTouchMove = (e) => {
   const element = e.target;
@@ -14,4 +16,9 @@ const handleTouchMove = (e) => {
   // console.log(tX, tY);
 }
 
+block.addEventListener("mousedown", () => span.innerHTML = "click")
+block.addEventListener("touchstart", (e) => {
+  pre.innerHTML = "touch"
+  e.preventDefault();
+})
 block.addEventListener("touchmove", handleTouchMove)
